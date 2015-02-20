@@ -11,10 +11,10 @@ var addNumbers = function(str){
 	for(var i = 0; i<spliFilterd.length; i++){
 		totald+=parseInt(spliFilterd[i]);
 	}
-	console.log(totald);
+	return totald;
 };
 
-addNumbers('88Hello99 3Wo666rld!');
+console.log(addNumbers('88Hello99 3Wo666rld!'));
 
 var longestWord = function(str){
 	var splitd = str.split(' ');
@@ -31,3 +31,16 @@ var longestWord = function(str){
 };
 
 longestWord('parameterrrrr that a single and searches for all the numbers in the string');
+
+var avgStrNum =function(str){
+	var totald = addNumbers(str);
+	var splitd = str.split('');
+	var spliFilterd = splitd.filter(function(e){
+		if(isNaN(e) && e!=' ' && e!='!' && e!='.' && e!=',' && e!='-' && e !=';'){return true}
+	});
+	console.log(spliFilterd);
+	var numLetters = spliFilterd.length;
+	return totald/numLetters
+};
+
+console.log(avgStrNum('Hello6 9World 2, Nic8e D7ay!'));
